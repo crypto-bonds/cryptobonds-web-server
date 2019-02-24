@@ -16,17 +16,17 @@
 
 </head>
 
-<body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-  <form class="type1">
+<body>
+  <form style="margin-top: 10%; margin-left: 10%; width: 400px">
       {% csrf_token %}
       <div class=" list-group">
     <a href="#" class="list-group-item list-group-item-action flex-column
           align-items-start">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ bank.name }}</h5>
+        <h5 class="mb-1">{{ company.name }}</h5>
         <small>random info</small>
       </div>
-      <p class="mb-1">${{ bank.money }}</p>
+      <p class="mb-1">${{ company.money }}</p>
       <small>other stuff</small>
     </a>
     </div>

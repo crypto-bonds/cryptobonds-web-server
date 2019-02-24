@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Bank, Trader, Company
+from datetime import datetime
+from .models import Bank, Trader, Company, Bond
 
 def index(request):
     return render(request, 'cryptoserver/index.html')
@@ -13,7 +14,8 @@ def signin(request):
         try:
             bank = Bank.objects.get(username=username)
             return render(request, 'cryptoserver/bank_main.html', {'bank': bank})
-        except:
+        except Exception as e:
+            print(e)
             return render(request, 'cryptoserver/Error_404.html')
 
     elif selection == '2':
@@ -41,8 +43,27 @@ def crequest(request, company_id):
     company = Company.objects.get(pk=company_id)
     return render(request, 'cryptoserver/company_request.html', {'company': company})
 
-def bwithdraw(request):
-    return render(request, 'cryptoserver/bank_withdraw.html')
+def bond_request(request):
+    bank = Bank.objects.get(name=request.POST['bank_name'])
+    company = Company.objects.get(id=request.POST['company_id'])
+    try:
+        Bond(issuer=company, underwriter=bank, amount=int(request.POST['amount']), denomination=int(request.POST['denomination']),
+            interest_rate=int(request.POST['interest_rate']), maturity_date=datetime.strptime(request.POST['maturity_date'], '%m/%d/%Y')).save()
+        return render(request, 'cryptoserver/company_main.html', {'company': company, 'message': 'Bond has been requested!'})
+    except:
+        return render(request, 'cryptoserver/company_main.html', {'company': company, 'message': 'There was an error in requesting bond... Try again later'})
+
+def bdeposit(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_deposit.html', {'bank': bank})
+
+def bwithdraw(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_withdraw.html', {'bank': bank})
+
+def baccept(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_accept.html', {'bank': bank})
 
 def twithdraw(request):
     return render(request, 'cryptoserver/trader_deposit.html')
