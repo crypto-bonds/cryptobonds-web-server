@@ -5,4 +5,5 @@ def index(request):
 
 
 def signin(request):
+    print(request.method)
     return render(request, 'cryptoserver/bank_main.html')

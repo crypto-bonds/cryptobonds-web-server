@@ -28,7 +28,7 @@ body{
 </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+  <head>
     <!-- mount point for the Mithril JS app -->
     <!-- <div id="app"></div> -->
     <title>Hello, world!</title>
@@ -36,33 +36,43 @@ body{
   <body style="background-color: #343E73; color: white">
     <div class="hero"></div>
     <h1 style="position:absolute; margin:10%; font-size:5rem;">crypto bonds</h1>
-    <form action="{% url 'signin' %}" method="post" style="margin-top: 30%; margin-left: 10%; width: 300px">
+    <form action="{% url 'signin' %}" method="post">
     {% csrf_token %}
-      <div class="form-row align-items-center form-check">
-        <div class="col-auto my-1">
-          <label class="mr-sm-2" for="inlineFormCustomSelect">Signing in as </label>
-          <select id="entity" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected>I am a...</option>
-            <option value="1">Bank</option>
-            <option value="2">Company</option>
-            <option value="3">Trader</option>
-          </select>
-        </div>
-        </div>
-        <div class="form-group form-check">
-          <label for="InputName">Name</label>
-          <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="Name">
-        </div>
-        
-        <div class="form-group form-check">
-          <label for="InputPassword1">Password</label>
-          <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-        </div>
-        <div class="col-auto my-1 form-check">
-          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
+
+        <input type="radio" name="choice" id="choice1" value="1" />
+        <label for="choice">Choice: </label><br/>
+
+        <input type="submit" value="Submit" />
     </form>
+{#    <form action="{% url 'signin' %}" method="post" style="margin-top: 30%; margin-left: 10%; width: 300px">#}
+{#    {% csrf_token %}#}
+{##}
+{#      <div class="form-row align-items-center form-check">#}
+{#        <div class="col-auto my-1">#}
+{#          <label class="mr-sm-2" for="inlineFormCustomSelect">Signing in as </label>#}
+{#          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">#}
+{#            <option selected>I am a...</option>#}
+{#            <option value="1">Bank</option>#}
+{#            <option value="2">Company</option>#}
+{#            <option value="3">Trader</option>#}
+{#          </select>#}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#        <div class="form-group form-check">#}
+{#          <label for="InputName">Name</label>#}
+{#          <input type="username" class="form-control" name="InputName" aria-describedby="nameHelp" placeholder="Name">#}
+{#        </div>#}
+{##}
+{#        <div class="form-group form-check">#}
+{#          <label for="InputPassword1">Password</label>#}
+{#          <input type="password" class="form-control" id="InputPassword" placeholder="Password">#}
+{#        </div>#}
+{##}
+{#        <div class="col-auto my-1 form-check">#}
+{#          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>#}
+{#        </div>#}
+{#    </form>#}
 
     <!-- <script src="dist/bundle.js"></script> -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
