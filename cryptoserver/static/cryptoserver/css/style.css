@@ -22,6 +22,12 @@ html, body {
     "Helvetica Neue", Arial, sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  html, body {
+    background-color: lightblue;
+  }
+}
+
 h1 {
   font-family: "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
   font-weight: 300;
