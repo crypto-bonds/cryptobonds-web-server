@@ -10,7 +10,7 @@ CryptoBonds is a blockchain application that was built using Hyperledger Sawtoot
 
 ## Installation
 
-## Django Server
+### Server setup
 
 This application is built using python Django framework deployed on heroku. 
 
