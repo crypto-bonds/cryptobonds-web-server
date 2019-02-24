@@ -19,5 +19,6 @@ urlpatterns = [
     path('<int:trader_id>/trader_deposit/', views.tdeposit, name='tdeposit'),
     path('<int:trader_id>/trader_withdraw/', views.twithdraw, name='twithdraw'),
     path('<int:trader_id>/trader_trade/', views.ttrade, name='ttrade'),
+    path('buy_bons/', views.buy_bond, name='buybond'),
 
 ]
