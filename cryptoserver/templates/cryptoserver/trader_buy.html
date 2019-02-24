@@ -14,8 +14,8 @@
     <title>Hello, world!</title>
 </head>
 
-<body>
-    <form style="margin-top: 10%; margin-left: 10%; width: 450px">
+<body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
+    <form class="type1">
         {% csrf_token %}
 
         <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 5%">Buy Google maturity Dec
