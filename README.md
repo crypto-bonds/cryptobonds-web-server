@@ -4,14 +4,15 @@ CryptoBonds is a blockchain application that was built using Hyperledger Sawtoot
 
 CryptoBonds is developed [by five people](https://github.com/crypto-bonds/crypto-bonds-server/graphs/contributors) at HackIllinois 2019, with the help of various mentors.
 
-## Front-End
+![](https://i.imgur.com/dwm3xdd.jpg)
 
-Our Django project is deployed on Heroku and is active under this link
-https://crypto-bonds.herokuapp.com/cryptoserver/
+## Quick Start
+
+[Click here](https://crypto-bonds.herokuapp.com/cryptoserver/) to access our front end web interface. Our Django project is deployed on Heroku.
 
 ## Installation
 
-### Server setup
+### 0. Server setup
 
 This application is built using python Django framework deployed on heroku. 
 
