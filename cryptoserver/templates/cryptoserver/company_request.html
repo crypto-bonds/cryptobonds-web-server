@@ -9,55 +9,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
   <link href="{% static 'cryptoserver/css/style.css' %}" rel="stylesheet">
-</head>
-
-<body>
   <!-- mount point for the Mithril JS app -->
   <!-- <div id="app"></div> -->
   <title>Hello, world!</title>
-  </head>
+</head>
 
-  <body>
-    <form style="margin-top: 10%; margin-left: 10%; width: 400px">
-      {% csrf_token %}
-      <h1>Company A</h1>
-      <div class="form-group">
-        <label for="InputName">Bank name</label>
-        <input type="name" class="form-control" id="InputName" aria-describedby="Bankname" placeholder="Bank A">
-      </div>
-      <div class="form-group">
-        <label for="InputName">Total Amount</label>
-        <input type="name" class="form-control" id="InputName" aria-describedby="TotalAmount" placeholder="1000">
-      </div>
-      <div class="form-group">
-        <label for="InputName">Denomination</label>
-        <input type="name" class="form-control" id="InputName" aria-describedby="Denominatoin" placeholder="$10">
-      </div>
-      <div class="form-group">
-        <label for="InputName">Interest Rate</label>
-        <input type="name" class="form-control" id="InputName" aria-describedby="interestRate" placeholder="5">
-      </div>
-      <div class="form-group">
-        <label for="InputName">Maturity Date</label>
-        <input type="name" class="form-control" id="InputName" aria-describedby="maturitydate" placeholder="10/10/2020">
-      </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block"
-        style="margin-top: 20px; margin-bottom: 20px">Request</button>
-      <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
-      </div>
-    </form>
+<body>
+  <form style="margin-top: 10%; margin-left: 10%; width: 400px">
+    {% csrf_token %}
+    <h1>Company A</h1>
+    <div class="form-group">
+      <label for="InputName">Bank name</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="Bankname" placeholder="Bank A">
+    </div>
+    <div class="form-group">
+      <label for="InputName">Total Amount</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="TotalAmount" placeholder="1000">
+    </div>
+    <div class="form-group">
+      <label for="InputName">Denomination</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="Denominatoin" placeholder="$10">
+    </div>
+    <div class="form-group">
+      <label for="InputName">Interest Rate</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="interestRate" placeholder="5">
+    </div>
+    <div class="form-group">
+      <label for="InputName">Maturity Date</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="maturitydate" placeholder="10/10/2020">
+    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block"
+      style="margin-top: 20px; margin-bottom: 20px">Request</button>
+    <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
+  </form>
 
-    <!-- <script src="dist/bundle.js"></script> -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-  </body>
+  <!-- <script src="dist/bundle.js"></script> -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
 
 </html>
