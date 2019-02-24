@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 
@@ -64,16 +63,12 @@
           // event.preventDefault();
           var e = document.getElementById("inlineFormCustomSelect");
           var strUser = e.options[e.selectedIndex].value;
-          if (strUser == 1) {
-            alert("1");
-            window.location.href = "http://example.com/new_url";
-          } else if (strUser == 2) {
-            // alert("2");
-            window.location.href = "company.html";
-            console.log(window.location.href);
-          } else if (strUser == 3) {
-            alert("3");
-            window.location.href = "http://example.com/new_url";
+          if(strUser == 1){
+            window.location.href = "cryptoserver/bank.html";
+          } else if(strUser == 2){
+            window.location.href = "cryptoserver/company_main.html";
+          } else if(strUser == 3){
+            window.location.href = "cryptoserver/trader.html";
           } else {
             alert("Please choose a drop down option");
           }
