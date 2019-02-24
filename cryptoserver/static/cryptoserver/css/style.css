@@ -1,9 +1,9 @@
-
+{% load static %}
 
 html, body {
   position: absolute;
   /* float: left; */
-  background-image: url('../images/bg.jpg');
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
