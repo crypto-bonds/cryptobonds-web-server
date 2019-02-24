@@ -22,15 +22,19 @@
 
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Company A</h5>
-                    <small>random info</small>
-                </div>
-                <p class="mb-1">$100 Mill</p>
-                <small>other stuff</small>
+                {% for bond in bank.bonds_set.all %}
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ bond.issuer }}</h5>
+                        <p>{{ bond.amount }}</p>
+                        <p>{{ bond.denomination }}</p>
+                        <p>{{ bond.interest_rate }}</p>
+                        <p>{{ bond.maturity_rate }}</p>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
+                    </div>
+                {% endfor %}
             </a>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
     </form>
 
