@@ -28,24 +28,24 @@ class BondHandler(TransactionHandler):
 
     #takes in the payload and figures out what order to do with the payload
 
-    payload = decode(txn.payload)
+    payload = decode(transaction.payload)
 
     action = payload.action
-    publicKey = txn.header.signerPublicKey
+    publicKey = transaction.header.signerPublicKey
 
-    if(action == "Issuing_Bond_to_Bank") {
+    if action == "Issuing_Bond_to_Bank" {
         return issuingBond(payload,header=transaction.header,state=state)
     }
-    elif(action == "Trader_Buys_Bank_Bond") {
-        return buyBandBond(payload,header=transaction.header,state=state)
+    elif action == "Trader_Buys_Bank_Bond" {
+        return buyBankBond(payload,header=transaction.header,state=state)
     }
-    elif(action == "Trader_Initiates_Trade") {
+    elif action == "Trader_Initiates_Trade" {
         return initiateTrade(payload,header=transaction.header,state=state)
     }
-    elif(action == "Trader_Cancels_Trade") {
+    elif action == "Trader_Cancels_Trade" {
         return cancelTrade(payload,header=transaction.header,state=state)
     }
-    elif(action == "Trader_Accepts_Order") {
+    elif action == "Trader_Accepts_Order" {
         return acceptOrder(payload,header=transaction.header,state=state)
     }
     elif action == "Add_Bitcoin" {
