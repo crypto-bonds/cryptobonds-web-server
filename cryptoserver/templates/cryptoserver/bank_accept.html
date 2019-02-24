@@ -19,22 +19,23 @@
 <body style="background-color: #343E73; color: white">
     <form style="margin-top: 10%; margin-left: 10%; width: 40%">
         {% csrf_token %}
-
+        <h1 class="mb-1">Bond Approval</h5>
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 {% for bond in bank.bond_set.all %}
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ bond.issuer.name }}</h5>
-                        <p>{{ bond.amount }}</p>
-                        <p>{{ bond.denomination }}</p>
-                        <p>{{ bond.interest_rate }}</p>
-                        <p>{{ bond.maturity_rate }}</p>
-                        <br>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
-                    </div>
-                {% endfor %}
-            </a>
-        </div>
+            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
+              <div class="d-flex w-100 justify-content-between">
+                <small>waiting for approval</small>
+                <small>{{ bond.issuer.name }}</small>
+              </div>
+              <p class="mb-1">Amount: ${{ bond.amount }}</p>
+              <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
+              <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
+              <p class="mb-1">Maturity Rate: {{ bond.maturity_rate }}</p>
+              <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
+            </div>
+            {% endfor %}
+          </div>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
     </form>
 
