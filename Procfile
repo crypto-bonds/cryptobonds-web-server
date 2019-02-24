@@ -1,1 +1,1 @@
-web: gunicorn cryptoserver.wsgi --log-file -
+web: gunicorn crypto_bonds_server.wsgi --log-file -
