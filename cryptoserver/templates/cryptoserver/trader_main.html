@@ -21,99 +21,31 @@
     <div class="row">
       <div class="col">
           <h1>{{ trader.name }}</h1>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Deposit/Withdraw</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Buy Bonds</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Trade</button>
+          {% if message %}
+            <p style="color: crimson"> {{ message }}</p>
+        {% endif %}
+        <a href="{% url 'tdeposit' trader.id %}"  class="btn btn-primary btn-lg btn-block">Deposit</a>
+          <a href="{% url 'twithdraw' trader.id %}"  class="btn btn-primary btn-lg btn-block">Withdraw</a>
+        <a href="{% url 'tbuy' trader.id %}"  class="btn btn-primary btn-lg btn-block">Buy Bonds</a>
+        <a href="{% url 'ttrade' trader.id %}"  class="btn btn-primary btn-lg btn-block">Trade</a>
       </div>
       <div class="col">
           <h1>${{ trader.money }}</h1>
-        <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
-        <div class="list-group " style="padding-bottom: 5%;">
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small>3 days ago</small>
+        <h1 style="font-size:1rem; margin-left: 40%;"><strong>Available Bonds</strong></h1>
+        <div class="list-group">
+                {% for bond in bonds %}
+            {% if bond.cleared == False %}
+            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
+                  <p> Bond Issuer: {{ bond.issuer.name }}</p>
+                <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
+              <p class="mb-1">Amount: ${{ bond.amount }}</p>
+              <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
+              <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
+              <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
+              <br>
             </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-        </div>
-        <div class="list-group" style="padding-bottom: 5%;">
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-        </div>
-        <div class="list-group" style="padding-bottom: 5%;">
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
+            {% endif %}
+            {% endfor %}
         </div>
       </div>
     </div>

@@ -22,6 +22,9 @@
     <div class="row">
       <div class="col">
         <h1>{{ bank.name }}</h1>
+        {% if message %}
+            <p style="color: crimson"> {{ message }}</p>
+        {% endif %}
         <a href="{% url 'bdeposit' bank.id %}" class="btn btn-primary btn-lg btn-block">Deposit
           Funds</a>
         <a href="{% url 'bwithdraw' bank.id %}" class="btn btn-primary btn-lg btn-block">Withdraw
@@ -32,39 +35,21 @@
         <h1>${{ bank.money }}</h1>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
         <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action
-              flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small>3 days ago</small>
+                {% for bond in bank.bond_set.all %}
+            {% if bond.cleared == False %}
+            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
+              <div class="d-flex w-100 justify-content-between">
+                <small>waiting for approval</small>
+                <small>{{ bond.issuer.name }}</small>
+              </div>
+              <p class="mb-1">Amount: ${{ bond.amount }}</p>
+              <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
+              <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
+              <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
+              <br>
             </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-              Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small>Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action
-              flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-              Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action
-              flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-              Maecenas sed diam eget risus varius
-              blandit.</p>
-            <small class="text-muted">Donec id elit non mi porta.</small>
-          </a>
+            {% endif %}
+            {% endfor %}
         </div>
       </div>
     </div>

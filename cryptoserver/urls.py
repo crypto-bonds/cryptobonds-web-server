@@ -13,6 +13,12 @@ urlpatterns = [
     path('<int:bank_id>/bank_withdraw/', views.bwithdraw, name='bwithdraw'),
     path('<int:bank_id>/bank_deposit/', views.bdeposit, name='bdeposit'),
     path('<int:bank_id>/bank_accept/', views.baccept, name='baccept'),
+    path('clear_bond/', views.bclear, name='clear_bond'),
 
-    path('trader_deposit_withdraw/', views.twithdraw, name='twithdraw'),
+    path('<int:trader_id>/trader_buy/', views.tbuy, name='tbuy'),
+    path('<int:trader_id>/trader_deposit/', views.tdeposit, name='tdeposit'),
+    path('<int:trader_id>/trader_withdraw/', views.twithdraw, name='twithdraw'),
+    path('<int:trader_id>/trader_trade/', views.ttrade, name='ttrade'),
+    path('buy_bons/', views.buy_bond, name='buybond'),
+
 ]
