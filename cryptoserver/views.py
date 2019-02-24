@@ -29,6 +29,23 @@ def signin(request):
         except:
             return render(request, 'cryptoserver/Error_404.html')
 
+def cwithdraw(request, company_id):
+    company = Company.objects.get(pk=company_id)
+    return render(request, 'cryptoserver/company_withdraw.html', {'company': company})
+
+def cdeposit(request, company_id):
+    company = Company.objects.get(pk=company_id)
+    return render(request, 'cryptoserver/company_deposit.html', {'company': company})
+
+def crequest(request, company_id):
+    company = Company.objects.get(pk=company_id)
+    return render(request, 'cryptoserver/company_request.html', {'company': company})
+
+def bwithdraw(request):
+    return render(request, 'cryptoserver/bank_withdraw.html')
+
+def twithdraw(request):
+    return render(request, 'cryptoserver/trader_deposit.html')
 
 def withdraw(request):
     pass
