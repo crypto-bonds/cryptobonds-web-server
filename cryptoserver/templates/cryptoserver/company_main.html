@@ -15,8 +15,8 @@
   <title>Hello, world!</title>
 </head>
 
-<body>
-  <form style="margin-top: 10%; margin-left: 10%; width: 50%">
+<body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
+  <form class="type2">
     {% csrf_token %}
     <div class="row">
       <div class="col">

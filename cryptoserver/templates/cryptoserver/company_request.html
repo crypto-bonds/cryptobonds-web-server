@@ -14,8 +14,9 @@
   <title>Hello, world!</title>
 </head>
 
+
 <body>
-  <form action="{% url 'bond_request' %}" method="post" style="margin-top: 10%; margin-left: 10%; width: 400px">
+  <form action="{% url 'bond_request' %}" method="post" class="type1">
     {% csrf_token %}
     <h1>{{ company.name }}</h1>
     <div class="form-group">

@@ -12,13 +12,13 @@
   <!-- mount point for the Mithril JS app -->
   <!-- <div id="app"></div> -->
   <title>Hello, world!</title>
+</head>
+
 
 <body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-  <h1 style="position:absolute; margin-left:150px; margin-top:150px; font-size:50px; font-weight: 300;">Crypto Bonds
-  </h1>
-  <h1 style="position:absolute; margin-left:150px; margin-top:210px; font-size:50px; font-weight: 500;">Admin Portal
-  </h1>
-  <form action="{% url 'signin' %}" method="post" style="margin-top: 25%; margin-left: 130px; width: 300px">
+  <h1 class="welcome_title_1 glitch" data-text="Crypto Bonds">Crypto Bonds</h1>
+  <h1 class="welcome_title_2 glitch" data-text="Admin Portal">Admin Portal</h1>
+  <form action="{% url 'signin' %}" method="post" class="type_index">
     {% csrf_token %}
 
     <div class="form-row align-items-center form-check">
