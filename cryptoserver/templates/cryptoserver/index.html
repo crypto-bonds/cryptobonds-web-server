@@ -16,8 +16,8 @@
 
 
 <body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-  <h1 class="welcome_title_1 glitch" data-text="Crypto Bonds">Crypto Bonds</h1>
-  <h1 class="welcome_title_2 glitch" data-text="Admin Portal">Admin Portal</h1>
+  <h1 class="welcome_title_1" data-text="Crypto Bonds">Crypto Bonds</h1>
+  <h1 class="welcome_title_2" data-text="Admin Portal">Admin Portal</h1>
   <form action="{% url 'signin' %}" method="post" class="type_index">
     {% csrf_token %}
 
