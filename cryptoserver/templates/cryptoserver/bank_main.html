@@ -21,10 +21,11 @@
     <div class="row">
       <div class="col">
         <h1>{{ bank.name }}</h1>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Deposit
-          Funds</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Withdraw
-          funds</button>
+        <a href="{% url 'bdeposit' bank.id %}" class="btn btn-primary btn-lg btn-block">Deposit
+          Funds</a>
+        <a href="{% url 'bwithdraw' bank.id %}" class="btn btn-primary btn-lg btn-block">Withdraw
+          funds</a>
+          <a href="{% url 'baccept' bank.id %}" class="btn btn-primary btn-lg btn-block">Review Bonds</a>
       </div>
       <div class="col">
         <h1>${{ bank.money }}</h1>
