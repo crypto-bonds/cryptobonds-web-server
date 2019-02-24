@@ -14,8 +14,7 @@
   <!-- <div id="app"></div> -->
   <title>Hello, world!</title>
 
-  <body style="background-color: #343E73; color: white">
-    <div class="hero"></div>
+  <body>
     <h1 style="position:absolute; margin-left:150px; margin-top:150px; font-size:50px;">Crypto Bonds</h1>
     <h1 style="position:absolute; margin-left:150px; margin-top:210px; font-size:50px; font-weight: normal;">Admin Portal</h1>
     <form style="margin-top: 25%; margin-left: 130px; width: 300px">
@@ -63,25 +62,12 @@
           // event.preventDefault();
           var e = document.getElementById("inlineFormCustomSelect");
           var strUser = e.options[e.selectedIndex].value;
-<<<<<<< HEAD
-          if (strUser == 1) {
-            alert("1");
-            window.location.href = "http://example.com/new_url";
-          } else if (strUser == 2) {
-            // alert("2");
-            window.location.href = "company.html";
-            console.log(window.location.href);
-          } else if (strUser == 3) {
-            alert("3");
-            window.location.href = "http://example.com/new_url";
-=======
           if(strUser == 1){
             window.location.href = "cryptoserver/bank.html";
           } else if(strUser == 2){
             window.location.href = "cryptoserver/company_main.html";
           } else if(strUser == 3){
             window.location.href = "cryptoserver/trader.html";
->>>>>>> origin/jonathan-branch
           } else {
             alert("Please choose a drop down option");
           }
