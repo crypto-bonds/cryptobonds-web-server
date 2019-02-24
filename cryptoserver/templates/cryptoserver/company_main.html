@@ -20,16 +20,16 @@
     {% csrf_token %}
     <div class="row">
       <div class="col">
-        <h1>Company A</h1>
-        <button type="button" class="btn btn-primary btn-lg btn-block">New
-          Issuance</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Deposit
-          Funds</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Withdraw
-          funds</button>
+        <h1>{{ company.name }}</h1>
+        <a href="{% url 'crequest' company.id %}" class="btn btn-primary btn-lg btn-block">New
+          Issuance </a>
+        <a href="{% url 'cdeposit' company.id %}" class="btn btn-primary btn-lg btn-block">Deposit
+          Funds </a>
+        <a href="{% url 'cwithdraw' company.id %}" class="btn btn-primary btn-lg btn-block">Withdraw
+          funds</a>
       </div>
       <div class="col">
-        <h1>$100,000,000</h1>
+        <h1>${{ company.money }}</h1>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
         <div class="list-group">
           <a href="#" class="list-group-item list-group-item-action
