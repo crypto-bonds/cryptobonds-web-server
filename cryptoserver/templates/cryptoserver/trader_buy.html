@@ -25,7 +25,7 @@
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
         <div class="list-group">
                 {% for bond in bonds %}
-            {% if bond.cleared == False and bond.owner != trader %}
+            {% if bond.cleared == True and bond.owner != trader %}
             <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
                   <p> Bond Issuer: {{ bond.issuer.name }}</p>
                 <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
@@ -42,7 +42,7 @@
                 <label for="trader_id"></label>
                 <input type="name" class="form-control" name="trader_id" value={{ trader.id }}>
               </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Buy Bond</button>
             </div>
             {% endif %}
             {% endfor %}
