@@ -1,3 +1,6 @@
+from .models import Bank, Trader, Company
 from django.contrib import admin
 
-# Register your models here.
+admin.site.register(Bank)
+admin.site.register(Trader)
+admin.site.register(Company)
