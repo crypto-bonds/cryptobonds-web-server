@@ -21,6 +21,9 @@
     <div class="row">
       <div class="col">
         <h1>{{ company.name }}</h1>
+        {% if message %}
+            <p style="color: crimson"> {{ message }}</p>
+        {% endif %}
         <a href="{% url 'crequest' company.id %}" class="btn btn-primary btn-lg btn-block">New
           Issuance </a>
         <a href="{% url 'cdeposit' company.id %}" class="btn btn-primary btn-lg btn-block">Deposit

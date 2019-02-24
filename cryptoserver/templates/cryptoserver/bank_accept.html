@@ -22,9 +22,9 @@
 
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                {% for bond in bank.bonds_set.all %}
+                {% for bond in bank.bond_set.all %}
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ bond.issuer }}</h5>
+                        <h5 class="mb-1">{{ bond.issuer.name }}</h5>
                         <p>{{ bond.amount }}</p>
                         <p>{{ bond.denomination }}</p>
                         <p>{{ bond.interest_rate }}</p>
