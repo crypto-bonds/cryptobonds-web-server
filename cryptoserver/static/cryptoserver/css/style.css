@@ -2,8 +2,6 @@
 
 html, body {
   position: absolute;
-  /* float: left; */
-
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,15 +20,39 @@ html, body {
     "Helvetica Neue", Arial, sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
-  html, body {
-    background-color: lightblue;
-  }
-}
-
 h1 {
   font-family: "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
   font-weight: 300;
+}
+
+.type1 {
+  margin-top: 10%; margin-left: 10%; width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .type1 {
+    width: 80%;
+  }
+}
+
+.type2 {
+  margin-top: 10%; margin-left: 10%; width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .type2 {
+    width: 80%;
+  }
+}
+
+.type_index {
+  margin-top: 25%; margin-left: 130px; width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .type_index {
+    width: 80%;
+  }
 }
 
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,700");
