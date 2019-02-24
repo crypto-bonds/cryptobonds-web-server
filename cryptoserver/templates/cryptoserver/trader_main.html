@@ -15,7 +15,7 @@
 </head>
 
 <body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-  <button type="logout" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</button>
+  <a href="{% url 'logout' %}" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</a>
   <form class="type2">
     {% csrf_token %}
     <div class="row">
