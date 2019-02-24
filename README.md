@@ -1,12 +1,13 @@
 # Hyperledger CryptoBonds 
-## Front End
+
+CryptoBonds is a blockchain application that was built using Hyperledger Sawtooth. The goal of the project is to make a stable coin with its value linked to real life company bonds. CryptoBonds acts as a clearing firm and monitors transactions between the banks and the traders. Traders are able to exchange cryptobonds and other cryptocurrencies with other users. 
+
+CryptoBonds is developed [by five people](https://github.com/crypto-bonds/crypto-bonds-server/graphs/contributors) at HackIllinois 2019, with the help of various mentors.
+
+## Front-End
 
 Our Django project is deployed on Heroku and is active under this link
 https://crypto-bonds.herokuapp.com/cryptoserver/
-
-## Description
-
-CryptoBonds is a blockchain application that was built using Hyperledger Sawtooth. The goal of the project is to make a stable coin with its value linked to real life company bonds. CryptoBonds acts as a clearing firm and monitors transactions between the banks and the traders. Traders are able to exchange cryptobonds and other cryptocurrencies with other users. 
 
 ## Installation
 
@@ -74,7 +75,9 @@ python manage.py runserver
 To get the code up and running on your device follow 
 the instructions here: https://devcenter.heroku.com/articles/django-app-configuration
 
-## Hyperledger Sawtooth BlockChain
+## Technologies
+
+### Hyperledger Sawtooth BlockChain
 
 https://github.com/hyperledger/sawtooth-core
 
