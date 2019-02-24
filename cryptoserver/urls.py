@@ -8,6 +8,9 @@ urlpatterns = [
     path('<int:company_id>/company_deposit/', views.cdeposit, name='cdeposit'),
     path('<int:company_id>/company_request/', views.crequest, name='crequest'),
 
-    path('bank_withdraw/', views.bwithdraw, name='bwithdraw'),
+    path('<int:bank_id>/bank_withdraw/', views.bwithdraw, name='bwithdraw'),
+    path('<int:bank_id>/bank_deposit/', views.bdeposit, name='bdeposit'),
+    path('<int:bank_id>/bank_accept/', views.baccept, name='baccept'),
+
     path('trader_deposit_withdraw/', views.twithdraw, name='twithdraw'),
 ]
