@@ -65,9 +65,31 @@ def baccept(request, bank_id):
     bank = Bank.objects.get(pk=bank_id)
     return render(request, 'cryptoserver/bank_accept.html', {'bank': bank})
 
-def twithdraw(request):
-    return render(request, 'cryptoserver/trader_deposit.html')
+def bclear(request):
+    try:
+        bond = Bond.objects.get(id=request.POST['bond_id'])
+        bank = Bank.objects.get(id=bond.underwriter.id)
+        bond.cleared = True
+        bond.save()
+        return render(request, 'cryptoserver/bank_main.html', {'bank': bank, 'message': 'Bond has been accepted and entered into the system'})
+    except:
+        return render(request, 'cryptoserver/bank_main.html',
+                      {'bank': bank, 'message': "Couldn't issue the bond... Try again later!"})
 
-def withdraw(request):
-    pass
+
+def tdeposit(request, trader_id):
+    trader = Trader.objects.get(id=trader_id)
+    return render(request, 'cryptoserver/trader_deposit.html', {'trader': trader})
+
+def twithdraw(request, trader_id):
+    trader = Trader.objects.get(id=trader_id)
+    return render(request, 'cryptoserver/trader_withdraw.html', {'trader': trader})
+
+def tbuy(request, trader_id):
+    trader = Trader.objects.get(id=trader_id)
+    return render(request, 'cryptoserver/trader_buy.html', {'trader': trader})
+
+def ttrade(request, trader_id):
+    trader = Trader.objects.get(id=trader_id)
+    return render(request, 'cryptoserver/trader_buy.html', {'trader': trader})
 
