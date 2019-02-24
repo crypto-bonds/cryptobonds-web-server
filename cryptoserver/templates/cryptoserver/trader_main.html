@@ -20,9 +20,10 @@
     <div class="row">
       <div class="col">
           <h1>{{ trader.name }}</h1>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Deposit/Withdraw</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Buy Bonds</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">Trade</button>
+        <a href="{% url 'tdeposit' trader.id %}"  class="btn btn-primary btn-lg btn-block">Deposit</a>
+          <a href="{% url 'twithdraw' trader.id %}"  class="btn btn-primary btn-lg btn-block">Withdraw</a>
+        <a href="{% url 'tbuy' trader.id %}"  class="btn btn-primary btn-lg btn-block">Buy Bonds</a>
+        <a href="{% url 'ttrade' trader.id %}"  class="btn btn-primary btn-lg btn-block">Trade</a>
       </div>
       <div class="col">
           <h1>${{ trader.money }}</h1>

@@ -15,27 +15,34 @@
 <title>Hello, world!</title>
 
 <body>
-    <form class="type2">
-        {% csrf_token %}
-        <h1 class="mb-1">Bond Approval</h5>
+
+        <h5 class="mb-1">Bond Approval</h5>
         <div class="list-group">
-                {% for bond in bank.bond_set.all %}
+          {% for bond in bank.bond_set.all %}
+              {% if bond.cleared == False %}
+           <form action="{% url 'clear_bond' %}" method="post" class="type2">
+            {% csrf_token %}
             <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
               <div class="d-flex w-100 justify-content-between">
-                <small>waiting for approval</small>
+                <small>Waiting for approval</small>
                 <small>{{ bond.issuer.name }}</small>
               </div>
               <p class="mb-1">Amount: ${{ bond.amount }}</p>
               <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
               <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
-              <p class="mb-1">Maturity Rate: {{ bond.maturity_rate }}</p>
+              <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
+              <div class="form-group" style="display: None">
+                <label for="bond_id"></label>
+                <input type="name" class="form-control" name="bond_id" value={{ bond.id }}>
+              </div>
               <br>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
             </div>
+            </form>
+              {% endif %}
             {% endfor %}
           </div>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
-    </form>
 
     <!-- <script src="dist/bundle.js"></script> -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
