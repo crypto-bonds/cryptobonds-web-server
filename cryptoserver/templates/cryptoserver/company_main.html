@@ -20,7 +20,7 @@
     {% csrf_token %}
     <div class="row">
       <div class="col">
-        <h1>Company A</h1>
+        <h1>{{ company.name }}</h1>
         <button type="button" class="btn btn-primary btn-lg btn-block">New
           Issuance</button>
         <button type="button" class="btn btn-primary btn-lg btn-block">Deposit
@@ -29,7 +29,7 @@
           funds</button>
       </div>
       <div class="col">
-        <h1>$100,000,000</h1>
+        <h1>${{ company.money }}</h1>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
         <div class="list-group">
           <a href="#" class="list-group-item list-group-item-action

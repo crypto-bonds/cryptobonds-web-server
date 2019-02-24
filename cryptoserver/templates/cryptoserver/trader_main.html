@@ -21,11 +21,13 @@
     {% csrf_token %}
     <div class="row">
       <div class="col">
+          <h1>{{ trader.name }}</h1>
         <button type="button" class="btn btn-primary btn-lg btn-block">Deposit/Withdraw</button>
         <button type="button" class="btn btn-primary btn-lg btn-block">Buy Bonds</button>
         <button type="button" class="btn btn-primary btn-lg btn-block">Trade</button>
       </div>
       <div class="col">
+          <h1>${{ trader.money }}</h1>
         <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
         <div class="list-group " style="padding-bottom: 5%;">
           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
