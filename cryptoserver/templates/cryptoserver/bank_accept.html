@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang = "en">
   <head>
     <title>Crypto Bonds</title>
@@ -13,6 +15,8 @@
     <title>Hello, world!</title>
   <body style="background-color: #343E73; color: white">
     <form style="margin-top: 10%; margin-left: 10%; width: 40%">
+        {% csrf_token %}
+
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
@@ -25,7 +29,6 @@
           </div>
               <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
               <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
-        </div>
       </form>
 
     <!-- <script src="dist/bundle.js"></script> -->

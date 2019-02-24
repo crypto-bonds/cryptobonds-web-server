@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang = "en">
   <head>
@@ -13,6 +15,7 @@
     <title>Hello, world!</title>
   <body style="background-color: #343E73; color: white">
     <form style="margin-top: 10%; margin-left: 10%; width: 80%">
+        {% csrf_token %}
         <div class="row">
           <div class="col">
               <button type="button" class="btn btn-primary btn-lg btn-block">Deposit/Withdraw</button>
