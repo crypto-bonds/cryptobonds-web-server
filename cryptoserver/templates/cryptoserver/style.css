@@ -21,6 +21,8 @@ body {
 }
 
 h1 {
-    font-family: "Product Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    font-family: 'Anonymous Pro', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700');
