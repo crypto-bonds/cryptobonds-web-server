@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +19,10 @@
 
   <body>
     <form style="margin-top: 10%; margin-left: 10%; width: 50%">
+      {% csrf_token %}
       <div class="row">
         <div class="col">
-          <h1 >Bank A</h1>
+          <h1>Bank A</h1>
           <button type="button" class="btn btn-primary btn-lg btn-block">Deposit Funds</button>
           <button type="button" class="btn btn-primary btn-lg btn-block">Withdraw funds</button>
         </div>

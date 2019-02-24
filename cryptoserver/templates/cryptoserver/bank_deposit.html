@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,17 +19,19 @@
 
   <body>
     <form style="margin-top: 10%; margin-left: 10%; width: 400px"">
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Bank A</h5>
-            <small>random info</small>
-          </div>
-          <p class="mb-1">$100 Mill</p>
-          <small>other stuff</small>
-        </a>
+      {% csrf_token %}
+      <div class=" list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Bank A</h5>
+          <small>random info</small>
+        </div>
+        <p class="mb-1">$100 Mill</p>
+        <small>other stuff</small>
+      </a>
       </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px; margin-bottom: 20px">Withdraw</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block"
+        style="margin-top: 20px; margin-bottom: 20px">Withdraw</button>
       <div class="form-group">
         <label for="InputName">Routing Number</label>
         <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp"
@@ -41,7 +45,8 @@
         <label for="InputName">Amount</label>
         <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="$1000">
       </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px; margin-bottom: 20px">Submit</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block"
+        style="margin-top: 20px; margin-bottom: 20px">Submit</button>
       <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
       </div>
     </form>
