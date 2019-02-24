@@ -13,7 +13,8 @@ def signin(request):
         try:
             bank = Bank.objects.get(username=username)
             return render(request, 'cryptoserver/bank_main.html', {'bank': bank})
-        except:
+        except Exception as e:
+            print(e)
             return render(request, 'cryptoserver/Error_404.html')
 
     elif selection == '2':
@@ -41,8 +42,17 @@ def crequest(request, company_id):
     company = Company.objects.get(pk=company_id)
     return render(request, 'cryptoserver/company_request.html', {'company': company})
 
-def bwithdraw(request):
-    return render(request, 'cryptoserver/bank_withdraw.html')
+def bdeposit(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_deposit.html', {'bank': bank})
+
+def bwithdraw(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_withdraw.html', {'bank': bank})
+
+def baccept(request, bank_id):
+    bank = Bank.objects.get(pk=bank_id)
+    return render(request, 'cryptoserver/bank_accept.html', {'bank': bank})
 
 def twithdraw(request):
     return render(request, 'cryptoserver/trader_deposit.html')
