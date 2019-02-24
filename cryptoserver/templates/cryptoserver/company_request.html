@@ -16,6 +16,7 @@
 
 
 <body>
+    <button type="logout" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</button>
   <form action="{% url 'bond_request' %}" method="post" class="type1">
     {% csrf_token %}
     <h1>{{ company.name }}</h1>
