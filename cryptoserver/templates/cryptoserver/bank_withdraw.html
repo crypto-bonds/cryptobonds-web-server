@@ -15,35 +15,35 @@
 </head>
 
 <body>
-  <form action="{% url 'bond_request' %}" method="post" style="margin-top: 10%; margin-left: 10%; width: 400px">
+  <form style="margin-top: 10%; margin-left: 10%; width: 400px">
     {% csrf_token %}
-    <h1>{{ company.name }}</h1>
-    <div class="form-group">
-      <label for="bank_name">Bank name</label>
-      <input type="name" class="form-control" name="bank_name" aria-describedby="Bankname" placeholder="Bank A">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ bank.name }}</h5>
+          <small>random info</small>
+        </div>
+        <p class="mb-1">${{ bank.money }}</p>
+        <small>other stuff</small>
+      </a>
     </div>
-    <div class="form-group" style="display: None">
-      <label for="company_id"></label>
-      <input type="name" class="form-control" name="company_id" value={{ company.id }}>
-    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block"
+      style="margin-top: 20px; margin-bottom: 20px">Withdraw</button>
     <div class="form-group">
-      <label for="amount">Total Amount</label>
-      <input type="name" class="form-control" name="amount" aria-describedby="TotalAmount" placeholder="1000">
-    </div>
-    <div class="form-group">
-      <label for="denomination">Denomination</label>
-      <input type="name" class="form-control" name="denomination" aria-describedby="Denominatoin" placeholder="$10">
-    </div>
-    <div class="form-group">
-      <label for="interest_rate">Interest Rate</label>
-      <input type="name" class="form-control" name="interest_rate" aria-describedby="interestRate" placeholder="5">
+      <label for="InputName">Routing Number</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="nameHelp"
+        placeholder="102973091283098">
     </div>
     <div class="form-group">
-      <label for="maturity_date">Maturity Date</label>
-      <input type="name" class="form-control" name="maturity_date" aria-describedby="maturitydate" placeholder="10/10/2020">
+      <label for="InputName">Account Number</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="nameHelp" placeholder="11921239">
     </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block"
-      style="margin-top: 20px; margin-bottom: 20px">Request</button>
+    <div class="form-group">
+      <label for="InputName">Amount</label>
+      <input type="name" class="form-control" name="InputName" aria-describedby="nameHelp" placeholder="$1000">
+    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block"
+      style="margin-top: 20px; margin-bottom: 20px">Submit</button>
     <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
   </form>
 
