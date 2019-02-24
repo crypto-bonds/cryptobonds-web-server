@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Bank, Trader, Company
+from datetime import datetime
+from .models import Bank, Trader, Company, Bond
 
 def index(request):
     return render(request, 'cryptoserver/index.html')
@@ -41,6 +42,16 @@ def cdeposit(request, company_id):
 def crequest(request, company_id):
     company = Company.objects.get(pk=company_id)
     return render(request, 'cryptoserver/company_request.html', {'company': company})
+
+def bond_request(request):
+    bank = Bank.objects.get(name=request.POST['bank_name'])
+    company = Company.objects.get(id=request.POST['company_id'])
+    try:
+        Bond(issuer=company, underwriter=bank, amount=int(request.POST['amount']), denomination=int(request.POST['denomination']),
+            interest_rate=int(request.POST['interest_rate']), maturity_date=datetime.strptime(request.POST['maturity_date'], '%m/%d/%Y')).save()
+        return render(request, 'cryptoserver/company_main.html', {'company': company, 'message': 'Bond has been requested!'})
+    except:
+        return render(request, 'cryptoserver/company_main.html', {'company': company, 'message': 'There was an error in requesting bond... Try again later'})
 
 def bdeposit(request, bank_id):
     bank = Bank.objects.get(pk=bank_id)
