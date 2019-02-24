@@ -30,3 +30,5 @@ class Bond(models.Model):
     denomination = models.IntegerField()
     interest_rate = models.IntegerField()
     maturity_date = models.DateTimeField()
+    owner = models.ForeignKey(Trader, on_delete=models.CASCADE, null=True)
+    cleared = models.BooleanField(default=False)
