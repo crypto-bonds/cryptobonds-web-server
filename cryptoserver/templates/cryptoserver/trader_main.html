@@ -33,7 +33,7 @@
         <h1 style="font-size:1rem; margin-left: 40%;"><strong>Available Bonds</strong></h1>
         <div class="list-group">
                 {% for bond in bonds %}
-            {% if bond.cleared == False %}
+            {% if bond.cleared == True %}
             <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
                   <p> Bond Issuer: {{ bond.issuer.name }}</p>
                 <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
