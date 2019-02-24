@@ -7,15 +7,17 @@
     <title>Crypto Bonds</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-    <link href="{% static 'cryptoserver/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'cryptoserver/css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <!-- mount point for the Mithril JS app -->
 <!-- <div id="app"></div> -->
 <title>Hello, world!</title>
 
-<body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-    <form class="type1">
+<body style="background-color: #343E73; color: white">
+    <form style="margin-top: 10%; margin-left: 10%; width: 40%">
         {% csrf_token %}
         <h1 class="mb-1">Bond Approval</h5>
         <div class="list-group">
