@@ -8,7 +8,17 @@ CryptoBonds is developed [by five people](https://github.com/crypto-bonds/crypto
 
 ## Quick Start
 
-[Click here](https://crypto-bonds.herokuapp.com/cryptoserver/) to access our front end web interface. Our Django project is deployed on Heroku.
+[Click here](https://crypto-bonds.herokuapp.com/cryptoserver/) to access our front end web interface. 
+Signin Accounts example
+- Bank
+  - Username: usbank1 
+  - Password: usbank123
+- Company
+  - Username: hyperledger1
+  - Password: hyperledger123
+- Trader
+  - Username: ben1
+  - Password: ben123
 
 ## Installation
 
