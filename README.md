@@ -22,6 +22,8 @@ Signin Accounts example
 
 ## Installation
 
+Cryptobonds application runs on two servers. One of them is a web application for client interaction involving banks, companies and traders. The other server is where blockchain is setup. To setup blockchain node server on your machine, please refer to this [repository](https://github.com/crypto-bonds/crypto-bonds)
+
 ### 0. Server setup
 
 This application is built using python Django framework deployed on heroku. 
