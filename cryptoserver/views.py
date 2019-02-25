@@ -15,7 +15,6 @@ def signin(request):
             bank = Bank.objects.get(username=username)
             return render(request, 'cryptoserver/bank_main.html', {'bank': bank})
         except Exception as e:
-            print(e)
             return render(request, 'cryptoserver/Error_404.html')
 
     elif selection == '2':
@@ -106,5 +105,6 @@ def buy_bond(request):
         return render(request, 'cryptoserver/trader_main.html', {'trader': trader,
                                                                  'message': 'Error occured in processing bond... please try later'})
 
-
+def logout(request):
+    return index(request)
 
