@@ -2,7 +2,7 @@
 
 CryptoBonds is a blockchain application that was built using Hyperledger Sawtooth. The goal of the project is to make a stable coin with its value linked to real life company bonds. CryptoBonds acts as a clearing firm and monitors transactions between the banks and the traders. Traders are able to exchange cryptobonds and other cryptocurrencies with other users. 
 
-CryptoBonds is developed [by five people](https://github.com/crypto-bonds/crypto-bonds-server/graphs/contributors) at HackIllinois 2019, with the help of various mentors.
+CryptoBonds is developed [by a team of five people](https://github.com/crypto-bonds/crypto-bonds-server/graphs/contributors) at HackIllinois 2019, with the help of mentors from Hyperlegder and Docker opensource community.
 
 ![](https://i.imgur.com/dwm3xdd.jpg)
 
