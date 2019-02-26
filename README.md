@@ -1,16 +1,30 @@
-# Hyperledger CryptoBonds 
-## Front End
-
-Our Django project is deployed on Heroku and is active under this link
-https://crypto-bonds.herokuapp.com/cryptoserver/
-
-## Description
+![](https://i.imgur.com/QFZWlB8.png)
 
 CryptoBonds is a blockchain application that was built using Hyperledger Sawtooth. The goal of the project is to make a stable coin with its value linked to real life company bonds. CryptoBonds acts as a clearing firm and monitors transactions between the banks and the traders. Traders are able to exchange cryptobonds and other cryptocurrencies with other users. 
 
+CryptoBonds is developed [by a team of five people](https://github.com/crypto-bonds/crypto-bonds-server/graphs/contributors) at HackIllinois 2019, with the help of mentors from [Hyperlegder](https://github.com/hyperledger/sawtooth-core) and [Docker](https://github.com/docker) opensource community.
+
+![](https://i.imgur.com/dwm3xdd.jpg)
+
+## Quick Start
+
+[Click here](https://crypto-bonds.herokuapp.com/cryptoserver/) to access our front end web interface. 
+Signin Accounts example
+- Bank
+  - Username: usbank1 
+  - Password: usbank123
+- Company
+  - Username: hyperledger1
+  - Password: hyper123
+- Trader
+  - Username: ben1
+  - Password: ben123
+
 ## Installation
 
-### Server setup
+Cryptobonds application runs on two servers. One of them is a web application for client interaction involving banks, companies and traders. The other server is where blockchain is setup. To setup blockchain node server on your machine, please refer to this [repository](https://github.com/crypto-bonds/crypto-bonds)
+
+### 0. Server setup
 
 This application is built using python Django framework deployed on heroku. 
 
@@ -74,7 +88,9 @@ python manage.py runserver
 To get the code up and running on your device follow 
 the instructions here: https://devcenter.heroku.com/articles/django-app-configuration
 
-## Hyperledger Sawtooth BlockChain
+## Technologies
+
+### Hyperledger Sawtooth BlockChain
 
 https://github.com/hyperledger/sawtooth-core
 
