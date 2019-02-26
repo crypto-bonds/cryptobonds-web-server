@@ -75,7 +75,7 @@ $ pip3 install Django
 ### 4. Clone repository and run server locally
 Clone repository using following command
 ```
-git clone https://github.com/crypto-bonds/crypto-bonds-server.git
+git clone https://github.com/crypto-bonds/django-client.git
 ```
 
 To run server locally
