@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render
 from datetime import datetime
 from .models import Bank, Trader, Company, Bond
@@ -8,27 +9,38 @@ def index(request):
 
 def signin(request):
     username = request.POST['InputName']
+    password = request.POST['InputPassword']
     selection = request.POST['inlineFormCustomSelect']
 
     if selection == '1':
         try:
-            bank = Bank.objects.get(username=username)
-            return render(request, 'cryptoserver/bank_main.html', {'bank': bank})
+            if Bank.objects.filter(Q(username=username) & Q(password=password)).exists():
+                bank = Bank.objects.get(Q(username=username) & Q(password=password))
+                return render(request, 'cryptoserver/bank_main.html', {'bank': bank})
+            else:
+                return render(request, 'cryptoserver/index.html', {'message': 'Invalid username or password'})
         except Exception as e:
             print(e)
             return render(request, 'cryptoserver/Error_404.html')
 
     elif selection == '2':
         try:
-            company = Company.objects.get(username=username)
-            return render(request, 'cryptoserver/company_main.html',  {'company': company})
+
+            if Company.objects.filter(Q(username=username) & Q(password=password)).exists():
+                company = Company.objects.get(Q(username=username) & Q(password=password))
+                return render(request, 'cryptoserver/company_main.html',  {'company': company})
+            else:
+                return render(request, 'cryptoserver/index.html', {'message': 'Invalid username or password'})
         except:
             return render(request, 'cryptoserver/Error_404.html')
     else:
         try:
-            trader = Trader.objects.get(username=username)
-            bonds = Bond.objects.all()
-            return render(request, 'cryptoserver/trader_main.html', {'trader': trader, 'bonds': bonds})
+            if Trader.objects.filter(Q(username=username) & Q(password=password)).exists():
+                trader = Trader.objects.get(Q(username=username) & Q(password=password))
+                bonds = Bond.objects.all()
+                return render(request, 'cryptoserver/trader_main.html', {'trader': trader, 'bonds': bonds})
+            else:
+                return render(request, 'cryptoserver/index.html', {'message': 'Invalid username or password'})
         except:
             return render(request, 'cryptoserver/Error_404.html')
 
@@ -106,5 +118,5 @@ def buy_bond(request):
         return render(request, 'cryptoserver/trader_main.html', {'trader': trader,
                                                                  'message': 'Error occured in processing bond... please try later'})
 
-
-
+def logout(request):
+    return index(request)
