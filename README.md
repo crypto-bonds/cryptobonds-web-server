@@ -15,7 +15,7 @@ Signin Accounts example
   - Password: usbank123
 - Company
   - Username: hyperledger1
-  - Password: hyperledger123
+  - Password: hyper123
 - Trader
   - Username: ben1
   - Password: ben123
