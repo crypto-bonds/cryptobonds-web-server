@@ -80,7 +80,7 @@ git clone https://github.com/crypto-bonds/django-client.git
 
 To run server locally
 ```
-cd crypto-bonds-server
+cd django-client
 python manage.py runserver
 ```
 
