@@ -15,37 +15,39 @@
 </head>
 
 <body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
-  <button type="logout" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</button>
+  <a href="{% url 'logout' %}" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</a>
   <form class="type2">
     {% csrf_token %}
     <div class="row">
       <div class="col">
           <h1>{{ trader.name }}</h1>
           {% if message %}
-            <p style="color: crimson"> {{ message }}</p>
-        {% endif %}
+              <p style="color: crimson"> {{ message }}</p>
+          {% endif %}
         <a href="{% url 'tdeposit' trader.id %}"  class="btn btn-primary btn-lg btn-block">Deposit</a>
-          <a href="{% url 'twithdraw' trader.id %}"  class="btn btn-primary btn-lg btn-block">Withdraw</a>
+        <a href="{% url 'twithdraw' trader.id %}"  class="btn btn-primary btn-lg btn-block">Withdraw</a>
         <a href="{% url 'tbuy' trader.id %}"  class="btn btn-primary btn-lg btn-block">Buy Bonds</a>
         <a href="{% url 'ttrade' trader.id %}"  class="btn btn-primary btn-lg btn-block">Trade</a>
       </div>
+
       <div class="col">
           <h1>${{ trader.money }}</h1>
         <h1 style="font-size:1rem; margin-left: 40%;"><strong>Available Bonds</strong></h1>
         <div class="list-group">
-                {% for bond in bonds %}
-            {% if bond.cleared == False %}
-            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
+            {% for bond in bonds %}
+             {% if bond.cleared == True and bond.owner is None %}
+                <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
                   <p> Bond Issuer: {{ bond.issuer.name }}</p>
-                <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
-              <p class="mb-1">Amount: ${{ bond.amount }}</p>
-              <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
-              <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
-              <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
-              <br>
-            </div>
-            {% endif %}
+                  <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
+                  <p class="mb-1">Amount: ${{ bond.amount }}</p>
+                  <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
+                  <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
+                  <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
+                  <br>
+                </div>
+             {% endif %}
             {% endfor %}
+
         </div>
       </div>
     </div>

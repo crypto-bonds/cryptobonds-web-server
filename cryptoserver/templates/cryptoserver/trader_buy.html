@@ -15,39 +15,38 @@
 </head>
 
 <body style='background-image: url("{% static 'cryptoserver/images/bg.jpg' %}")'>
+    <a href="{% url 'logout' %}" class="btn btn-danger btn-lg btn-block" style="position: fixed; float: right; width: 100px; margin: 1%; right: 0;">Logout</a>
+    <h1>{{ trader.name }}</h1>
+    <h1>${{ trader.money }}</h1>
 
-          <h1>{{ trader.name }}</h1>
-
-          <h1>${{ trader.money }}</h1>
-
-        <form action="{% url 'buybond' %}" method="post" class="type1">
-        {% csrf_token %}
-        <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
-        <div class="list-group">
-                {% for bond in bonds %}
-            {% if bond.cleared == False and bond.owner != trader %}
-            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
-                  <p> Bond Issuer: {{ bond.issuer.name }}</p>
-                <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
-              <p class="mb-1">Amount: ${{ bond.amount }}</p>
-              <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
-              <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
-              <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
-              <br>
-                <div class="form-group" style="display: None">
-                <label for="bond_id"></label>
-                <input type="name" class="form-control" name="bond_id" value={{ bond.id }}>
-              </div>
-                <div class="form-group" style="display: None">
-                <label for="trader_id"></label>
-                <input type="name" class="form-control" name="trader_id" value={{ trader.id }}>
-              </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
-            </div>
+    <form action="{% url 'buybond' %}" method="post" class="type1">
+    {% csrf_token %}
+    <!-- <h1 style="font-size:1rem;">Issue Request</h1> -->
+    <div class="list-group">
+        {% for bond in bonds %}
+            {% if bond.cleared == True and bond.owner is None %}
+                <div href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="margin: 5%;">
+                    <p> Bond Issuer: {{ bond.issuer.name }}</p>
+                    <p> Bond Underwriter: {{ bond.underwriter.name }}</p>
+                    <p class="mb-1">Amount: ${{ bond.amount }}</p>
+                    <p class="mb-1">Denomination: ${{ bond.denomination }}</p>
+                    <p class="mb-1">Rate: {{ bond.interest_rate }}%</p>
+                    <p class="mb-1">Maturity Rate: {{ bond.maturity_date }}</p>
+                    <br>
+                    <div class="form-group" style="display: None">
+                        <label for="bond_id"></label>
+                        <input type="name" class="form-control" name="bond_id" value={{ bond.id }}>
+                    </div>
+                    <div class="form-group" style="display: None">
+                        <label for="trader_id"></label>
+                        <input type="name" class="form-control" name="trader_id" value={{ trader.id }}>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Accept</button>
+                </div>
             {% endif %}
-            {% endfor %}
-        </div>
-        </form>
+        {% endfor %}
+    </div>
+    </form>
 
 
     <!-- <script src="dist/bundle.js"></script> -->
